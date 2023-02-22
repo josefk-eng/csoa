@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+    {% block slider %}
+        {% include 'slider.html' %}
+    {% endblock %}
+    {% block main %}
+        {% include 'main.html' %}
+    {% endblock %}
+{% endblock %}
