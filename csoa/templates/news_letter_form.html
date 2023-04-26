@@ -1,0 +1,149 @@
+{% load static %}
+{% block news_form %}
+<style>
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+
+.contact-form .form-group {
+  padding-bottom: 8px;
+}
+
+
+.contact-form .error-message {
+  color: #fff;
+  background: #ed3c0d;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact-form .sent-message {
+  color: #fff;
+  background: #18d26e;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+    color:#fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #47b2e4;
+}
+
+.contact-form input {
+  height: 44px;
+}
+
+.contact-form button {
+  background: #47b2e4;
+  border: 0;
+  padding: 12px 34px;
+  color: #fff;
+  border-radius: 50px;
+}
+
+.contact-form button:hover {
+  background: #209dd8;
+}
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+    <form action="forms/contact.php" method="post" role="form" class="contact-form">
+      <div class="row">
+        <div class="col-md-6 form-group">
+          <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name" required>
+        </div>
+        <div class="col-md-6 form-group mt-md-0">
+          <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name" required>
+        </div>
+      </div>
+      <div class="form-group mt-3">
+        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email Please" required>
+      </div>
+    <label for="ff_1_country-list" aria-label="Please indicate which country you live in">Please indicate which region you live in </label>
+    <div class="choices" data-type="select-one" tabindex="0" role="combobox" aria-autocomplete="list" aria-haspopup="true">
+        <div class="choices__inner">
+            <select name="country-list" id="ff_1_country-list" class="ff-el-form-control ff_has_multi_select choices__input" placeholder="Select Region" data-name="country-list" tabindex="-1" aria-invalid="false" aria-required="true" hidden="" data-choice="active">
+                <option value="">Select Region</option>
+            </select>
+        </div>
+    </div>
+        <br>
+        <div>.</div>
+        <br>
+    <div class="form-group d-flex align-items-center justify-content-center hero">
+        <a type="submit" class="hero-btn" >Subscribe</a>
+    </div>
+    </form>
+
+{% endblock %}

@@ -34,11 +34,13 @@ ALLOWED_HOSTS = ['www.csoa.org','csoa.org','https://www.csoa.org','127.0.0.1']
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    'bootstrap4',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'csoa',
+    'whoweare',
 ]
 
 MIDDLEWARE = [

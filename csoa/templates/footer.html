@@ -1,68 +1,55 @@
 {% load static %}
 {% block footer %}
 <footer>
-<div class="footer-wrapper">
+ <div class="footer-wrapper">
 
-<div class="footer-area footer-padding">
-<div class="container ">
-<div class="row justify-content-between">
-<div class="col-xl-4 col-lg-3 col-md-8 col-sm-8">
-<div class="single-footer-caption mb-50">
-<div class="single-footer-caption mb-30">
-
-<div class="footer-logo mb-35">
-<a href="index.html"><img src="{% static 'assets/img/logo/circlelogo.png' %}" alt=""></a>
-</div>
-<div class="footer-tittle">
-<div class="footer-pera">
-<p>We exist to train up our children and staff in the way they should go (Proverbs 22:6); preparing them to flourish in the world.</p>
-</div>
-</div>
-
-<div class="footer-social">
-<a href="#"><i class="fab fa-twitter"></i></a>
-<a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
- <a href="#"><i class="fab fa-pinterest-p"></i></a>
-</div>
-</div>
-</div>
-</div>
-<div class="col-xl-2 col-lg-3 col-md-4 col-sm-4">
-<div class="single-footer-caption mb-50">
-<div class="footer-tittle">
-<h4>Points Of Focus</h4>
-<ul>
-<li><a href="#">Descipleship</a></li>
-<li><a href="#">Leadership Training</a></li>
-<li><a href="#">Christian Retreats</a></li>
-<li><a href="#">Sensitisation</a></li>
-<li><a href="#">Bible Engagement</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="col-xl-2 col-lg-2 col-md-4 col-sm-4">
-<div class="single-footer-caption mb-50">
-<div class="footer-tittle">
-<h4>Organisation</h4>
-<ul>
-<li><a href="#">About</a></li>
-<li><a href="#">Review</a></li>
-<li><a href="#">Insights</a></li>
-<li><a href="#">Carrier</a></li>
-</ul>
-</div>
-</div>
-</div>
+  <div class="footer-area footer-padding">
+   <div class="container ">
+    <div class="row justify-content-between">
+     <div class="col-xl-4 col-lg-3 col-md-8 col-sm-8">
+      <div class="single-footer-caption mb-50">
+       <div class="single-footer-caption mb-30">
+        <div class="footer-tittle">
+         <h4>OUR DETAILS</h4>
+         <div class="footer-logo mb-35 d-flex align-content-center">
+          <a href="index.html" style="padding-right:16px;padding-top:20px;"><img src="{% static 'assets/img/logo/circlelogo.png' %}" alt=""></a>
+          <p>Christian Schools Owners Association is a non-profit organisations registered in Uganda. Our main objective is to deliver Christ-Centered Education as an effort to transform societies</p>
+        </div>
+          <div class="footer-pera">
+           <p>We exist to train up our children and staff in the way they should go (Proverbs 22:6); preparing them to flourish in the world.</p>
+          </div>
+                 <ul>
+         <li class="number"><a href="#">00000000</a></li>
+        </ul>
+        </div>
+        <div class="footer-social">
+         <a href="#"><i class="fab fa-twitter"></i></a>
+         <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+      </div>
+    </div>
+     </div>
+   <div class="col-xl-4 col-lg-6 col-md-8 col-sm-8">
+     <div class="single-footer-caption mb-50">
+       <div class="footer-tittle">
+        <h4>SUBSCRIBE TO OUR NEWS</h4>
+         {% block news_form %}
+        {% include 'news_letter_form.html' %}
+        {% endblock %}
+       </div>
+     </div>
+   </div>
 <div class="col-xl-3 col-lg-4 col-md-6 col-sm-4">
 <div class="single-footer-caption mb-50">
 <div class="footer-tittle">
-<h4>Contact us</h4>
+<h4>QUICK LINKS</h4>
 <ul>
-<li><a href="#"><span class="__cf_email__" data-cfemail="f1929e9f82849d859ec8c9b1969c90989ddf929e9c">[email&#160;protected]</span></a></li>
-<li><a href="#">(Address1 Address2 Address3)</a></li>
-<li><a href="#">Privacy Policy</a></li>
-<li class="number"><a href="#">(256) 788 798-016</a></li>
+<li><a href="#"><span >CONTACT</span></a></li>
+<li><a href="#">NEWS</a></li>
+<li><a href="#">DONATE</a></li>
+<li><a href="#">WHERE WE ARE</a></li>
+<li><a href="#">PRIVACY</a></li>
+<li><a href="#">EXTRANET</a></li>
 </ul>
 </div>
 </div>
@@ -78,7 +65,7 @@
 <div class="col-xl-12 ">
 <div class="footer-copy-right text-center">
 <p>
-Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | Designed by <a href="https://jonestah.com" target="_blank">Jones And Estah Systems</a>
 </p>
 </div>
 </div>

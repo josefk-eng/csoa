@@ -1,57 +1,81 @@
 {% load static %}
 {% block main %}
-<div class="visit-tailor-area fix">
 
-<div class="tailor-offers" style="background-image: url('../static/assets/img/mission/ourmission.png');"></div>
-
-<div class="tailor-details">
-<span>Our Mission</span>
-<h2>Our main goal is to impact schools and communities</h2>
-<p>[Description]</p>
-<p class="pera-bottom">[More Description]</p>
-<div class="footer-tittles">
-<p>CEO </p>
-<h2>Daniel Mwesigwa</h2>
-</div>
-</div>
-</div>
+<!-- ======= Intro ======= -->
+<section id="intro" class="intro" style="padding-top:100px;">
+  <div class=" d-flex align-items-center justify-content-center">
+      <p style="width:80vw;" >Christian Schools Owners Association operates in... More Infor About CSOA Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+  </div>
+    <div class="divider div-transparent div-dot"></div>
+</section><!-- End Features Section -->
 
 
 <div class="service-area section-padding30">
-<div class="container">
-<div class="row">
-<div class="col-lg-4 col-md-6 col-sm-11">
-<div class="single-cat text-center mb-30">
-<div class="cat-icon">
-<img src="{% static 'assets/img/services/education.JPG' %}" alt="">
-</div>
-<div class="cat-cap">
-<h5><a href="#">Education</a></h5>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-11">
-<div class="single-cat active text-center mb-30">
-<div class="cat-icon">
-<img src="{% static 'assets/img/services/entre.JPG' %}" alt="">
-</div>
-<div class="cat-cap">
-<h5><a href="#">Entrepreneurship</a></h5>
-</div>
-</div>
-</div>
-<div class="col-lg-4 col-md-6 col-sm-11">
-<div class="single-cat text-center mb-30">
-<div class="cat-icon">
-<img src="{% static 'assets/img/services/advocacy.JPG' %}" alt="">
-</div>
-<div class="cat-cap">
-<h5><a href="#">Advocacy</a></h5>
-</div>
-</div>
-</div>
-</div>
-</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/services/education.JPG' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Stay In School Programs</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat active text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/services/entre.JPG' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Leadership Trainings</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/services/advocacy.JPG' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Discipleship</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/placeholder/placeholder1.png' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Financial Literacy</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/placeholder/placeholder1.png' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Water Distribution In Schools</a></h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-11">
+                <div class="single-cat text-center mb-30">
+                    <div class="cat-icon">
+                        <img src="{% static 'assets/img/placeholder/placeholder1.png' %}" alt="">
+                    </div>
+                    <div class="cat-cap">
+                        <h5><a href="#">Climate Conservation Awareness</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="divider div-transparent div-dot"></div>
 </div>
 
 
@@ -95,13 +119,14 @@
         </div>
 
       </div>
+        <div class="divider div-transparent div-dot"></div>
     </section><!-- End Our Clients Section -->
 
 
 
 
 
-<section class="support-company-area fix pt-10">
+{% comment %}<section class="support-company-area fix pt-10">
 <div class="support-wrapper align-items-center">
 <div class="left-content">
 
@@ -131,7 +156,7 @@
 </div>
 </div>
 </div>
-</section>
+</section>{% endcomment %}
 
 
 
@@ -141,7 +166,7 @@
 <div class="col-xl-10 col-lg-10 ">
 
 <div class="section-tittle text-center mb-80">
-<h2>Over 7000 Districts have been impacted</h2>
+<h2>Over 100 Districts have been impacted</h2>
 <p class="pl-20 pr-20">Interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo
 cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</p>
 </div>
@@ -232,6 +257,7 @@ rutrum.</p>
 </div>
 </div>
 </div>
+    <div class="divider div-transparent div-dot"></div>
 </div>
 
 
@@ -276,5 +302,6 @@ rutrum.</p>
 </div>
 </div>
 </div>
+    <div class="divider div-transparent div-dot"></div>
 </section>
 {% endblock %}

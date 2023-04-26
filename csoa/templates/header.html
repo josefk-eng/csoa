@@ -1,48 +1,234 @@
 {% load static %}
 {% block header%}
+{% load my_extras %}
+
+<style>
+    .searchbar{
+    position:relative;
+    min-width:50px;
+    width:0%;
+    height:50px;
+    float:right;
+    overflow:hidden;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    -ms-transition: width 0.3s;
+    -o-transition: width 0.3s;
+    transition: width 0.3s;
+}
+.searchbar-input{
+    top: 0;
+    right: 0;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0px 55px 0px 20px;
+    font-size: 20px;
+    color: #fff;
+}
+.searchbar-input::-webkit-input-placeholder {
+    color: #fff;
+}
+.searchbar-input:-moz-placeholder {
+    color: #fff;
+}
+.searchbar-input::-moz-placeholder {
+    color: #fff;
+}
+.searchbar-input:-ms-input-placeholder {
+    color: #fff;
+}
+.searchbar-icon,
+.searchbar-submit{
+    width:50px;
+    height:50px;
+    display:block;
+    position:absolute;
+    top:0;
+    font-family:verdana;
+    font-size:22px;
+    right:0;
+    padding:0;
+    margin:0;
+    border:0;
+    outline:0;
+    line-height:50px;
+    text-align:center;
+    cursor:pointer;
+    color:#fff;
+    border-left: 1px solid white;
+}
+.searchbar-open{
+    width:100%;
+}
+
+
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6{
+  position: absolute;
+  display: block;
+  right: -100%;
+  width: 60%;
+  opacity: 0;
+  font-size: 2em;
+  animation-duration: 20s;
+  animation-timing-function: cubic-bezier(1,1,0.25,1);
+  animation-iteration-count: infinite;
+  animation-name: anim-all;
+
+}
+
+.item-1 p,
+.item-2 p,
+.item-3 p,
+.item-4 p,
+.item-5 p,
+.item-6 p{
+    font-weight: bold;
+}
+
+
+.item-1 { animation-delay: 0s }
+.item-2 { animation-delay: 5s }
+.item-3 { animation-delay: 10s }
+.item-4 { animation-delay: 15s }
+.item-5 { animation-delay: 20s }
+.item-6 { animation-delay: 25s }
+
+@keyframes anim-all {
+  0%, 33.33% {
+    right: -100%;
+    opacity: 0;
+  }
+  33.33%, 50% {
+        right: 25%;
+    opacity: 1;
+  }
+  50%, 100% {
+        right: 110%;
+    opacity: 0;
+  }
+}
+
+</style>
 
 <header>
 
     <div class="header-area">
         <div class="main-header ">
-            <div class="header-bottom  header-sticky">
+            <div class="header-bottom  header-sticky" style="padding:0;">
                 <div class="container-fluid">
                     <div class="row align-items-center">
 
-                        <div class="col-xl-2 col-lg-2">
+                        <div class="col-xl-2 col-lg-2" style="display:absolute;left:0;z-index: 950; background-color:#fff;padding:0px">
                             <div class="logo">
-                                <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/logo4.png' %}" alt=""></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/small_csoa.png' %}" alt="" width="250" height="180"></a>
                             </div>
                         </div>
-                        <div class="col-xl-10 col-lg-10">
+                        <div class="col-xl-10 col-lg-10" style="padding-right:0;">
+                            <div class="d-flex align-items-center justify-content-end">
+                                <div style="background-color:#fff;" class="d-flex align-items-center justify-content-center">
+                                    <div style="z-index: 900;padding-bottom:20px;" class="d-flex moving-text">
+                                        {% for text in moving %}
+                                            <div class="item-{{forloop.counter}}">
+                                                <p>
+                                                    {% for word in movingword|slide_text:text.id %}
+                                                        {% if word.isLink %}
+                                                            <span><a href="{% url word.linkAddress %}">{{word.word}}</a></span>
+                                                        {% else %}
+                                                            <span>{{word.word}}</span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </p>
+                                            </div>
+                                        {% endfor %}
+                                </div>
+                                </div>
+                                <div style="z-index: 950;background-color:#fff;width:28vw" class="d-flex align-items-center justify-content-end">
+                                    <div class="header-right-btn d-none d-lg-block ml-20">
+                                        <a href="" class="btnn header-btn">Donate</a>
+                                    </div>
+                                    <div class="header-right-btn d-none d-lg-block ml-20">
+                                        <a href="" class="btnn header-btn">Subscribe</a>
+                                    </div>
+                                    <form class="searchbar">
+                                        <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required>
+
+                                        <span class="searchbar-icon"><i class="bi bi-search"></i></span>
+                                    </form>
+                                </div>
+                            </div>
                             <div class="menu-wrapper  d-flex align-items-center justify-content-end">
 
                                 <div class="main-menu d-none d-lg-block">
                                     <nav>
-                                        <ul id="navigation">
+                                        <ul id="navigation" >
                                             <li><a href="{% url 'index' %}">Home</a></li>
-                                            <li><a href="">Who We Are</a></li>
-                                            <li><a href="">What we Do</a></li>
+                                            <li><a href="">Who We Are</a>
+                                                <ul class="submenu">
+                                                    <li><a href="{% url 'statements' %}">Mission Statements</a></li>
+                                                    <li><a href="{% url 'network' %}">Coordinator Network</a></li>
+                                                    <li><a href="{% url 'history' %}">History</a></li>
+                                                    <li><a href="{% url 'partners' %}">Partners</a></li>
+                                                    <li><a href="{% url 'modeofoperation' %}">Our Mode Of Operation</a></li>
+                                                    <li><a href="{% url 'portfolios' %}">Portfolios</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="">What we Do</a>
+                                                <ul class="submenu">
+                                                    <li><a href="">Prayer</a></li>
+                                                    <li><a href="">Partnerships</a></li>
+                                                    <li><a href="">Our Stories</a></li>
+                                                    <li><a href="">What they say about us</a></li>
+                                                    <li><a href="">News</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="">Trainings</a>
+                                                <ul class="submenu">
+                                                    <li><a href="">Leadership</a></li>
+                                                    <li><a href="">School Management Trainings</a></li>
+                                                    <li><a href="">Financial Literacy</a></li>
+                                                    <li><a href="">IT and automation</a></li>
+                                                    <li><a href="">Capacity Building</a></li>
+                                                </ul>
+                                            </li>
                                             <li><a href="">Projects</a>
                                                 <ul class="submenu">
                                                     <li><a href="">Projects Overview</a></li>
+                                                    <li><a href="">Examination Board</a></li>
+                                                    <li><a href="">Regional Sports Galour</a></li>
+                                                    <li><a href="">Regional MDD</a></li>
+                                                    <li><a href="">Prayer Networks</a></li>
+                                                    <li><a href="">Academic Seminars</a></li>
+                                                    <li><a href="">Awareness and climate conservation</a></li>
+                                                    <li><a href="">Awareness for children to stay in school</a></li>
+                                                    <li><a href="">`discipleship</a></li>
+                                                    <li><a href="">Menstrual Health</a></li>
+                                                    <li><a href="">Girl Child Empowerment </a></li>
+                                                    <li><a href="">Boy Child awakening </a></li>
                                                 </ul>
                                             </li>
                                             <li><a >Resources</a>
                                                 <ul class="submenu">
                                                     <li><a href="">Resources Overview</a></li>
                                                     <li><a href="">Trainings</a></li>
-                                                    <li><a href="">Bibles</a></li>
+                                                    <li><a href="">Bible engagements</a></li>
+                                                    <li><a href="">Family Links</a></li>
+                                                    <li><a href="">Covid19 relief</a></li>
                                                 </ul>
                                             </li>
+                                            <li><a href="">Contact Us</a></li>
 
                                         </ul>
                                     </nav>
                                 </div>
 
-                                <div class="header-right-btn d-none d-lg-block ml-20">
-                                    <a href="" class="btn header-btn">Contact Us</a>
-                                </div>
                             </div>
                         </div>
 
@@ -57,4 +243,47 @@
 
 </header>
 
+<script>
+
+    $(document).ready(function(){
+            var submitIcon = $('.searchbar-icon');
+            var inputBox = $('.searchbar-input');
+            var searchbar = $('.searchbar');
+            var isOpen = false;
+            submitIcon.click(function(){
+                if(isOpen == false){
+                    searchbar.addClass('searchbar-open');
+                    inputBox.focus();
+                    isOpen = true;
+                } else {
+                    searchbar.removeClass('searchbar-open');
+                    inputBox.focusout();
+                    isOpen = false;
+                }
+            });
+             submitIcon.mouseup(function(){
+                    return false;
+                });
+            searchbar.mouseup(function(){
+                   return false;
+                });
+            $(document).mouseup(function(){
+                    if(isOpen == true){
+                        $('.searchbar-icon').css('display','block');
+                        submitIcon.click();
+                    }
+                });
+        });
+            function buttonUp(){
+                var inputVal = $('.searchbar-input').val();
+                inputVal = $.trim(inputVal).length;
+                if( inputVal !== 0){
+                    $('.searchbar-icon').css('display','none');
+                } else {
+                    $('.searchbar-input').val('');
+                    $('.searchbar-icon').css('display','block');
+                }
+            })
+
+</script>
 {% endblock %}
