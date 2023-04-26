@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-w7%5^yhw7=dogl1@m(8vg9q7-5@u%cw593mtdq3sq8i8f88c4k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.csoa.org','csoa.org','https://www.csoa.org','127.0.0.1']
+ALLOWED_HOSTS = ['www.csoau.org','csoau.org','127.0.0.1','18.132.61.137']
 
 
 # Application definition
