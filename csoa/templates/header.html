@@ -128,7 +128,7 @@
 
                         <div class="col-xl-2 col-lg-2" style="display:absolute;left:0;z-index: 950; background-color:#fff;padding:0px">
                             <div class="logo">
-                                <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/small_csoa.png' %}" alt="" width="250" height="180"></a>
+                                <a href="{% url 'index' %}"><img src="{% static 'assets/img/logo/small_csoa.png' %}" alt="" ></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10" style="padding-right:0;">
@@ -136,7 +136,7 @@
                                 <div style="background-color:#fff;" class="d-flex align-items-center justify-content-center">
                                     <div style="z-index: 900;padding-bottom:20px;" class="d-flex moving-text">
                                         {% for text in moving %}
-                                            <div class="item-{{forloop.counter}}">
+                                            <div class="item-{{forloop.counter}} d-none d-lg-block">
                                                 <p>
                                                     {% for word in movingword|slide_text:text.id %}
                                                         {% if word.isLink %}
@@ -157,7 +157,7 @@
                                     <div class="header-right-btn d-none d-lg-block ml-20">
                                         <a href="" class="btnn header-btn">Subscribe</a>
                                     </div>
-                                    <form class="searchbar">
+                                    <form class="searchbar d-none d-lg-block">
                                         <input type="search" placeholder="Search here" name="search" class="searchbar-input" onkeyup="buttonUp();" required>
 
                                         <span class="searchbar-icon"><i class="bi bi-search"></i></span>

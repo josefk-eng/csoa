@@ -280,6 +280,22 @@ li {
     .hero-btn {
         display: none
     }
+    .logo a img{
+        width:180px;
+        height:110px;
+        display: block;
+        margin: 0 auto;
+    }
+    .moving-text p{
+        font-size:12px;
+        margin-top:-16px;
+        word-spacing:2px;
+    }
+}
+
+.logo img{
+    width:250px;
+    height:180px;
 }
 
 .hero-btn::before {
