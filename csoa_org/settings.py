@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'csoa',
     'whoweare',
+    'project',
+    'resorce',
+    'training',
+    'whatwedo',
+    'contact'
 ]
 
 MIDDLEWARE = [

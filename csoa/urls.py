@@ -4,5 +4,5 @@ from . import views
 urlpatterns = [
     path('',views.index, name='index'),
     path('report',views.report, name='report'),
-    path('whoweare', include('whoweare.urls'))
+    path('about', include('whoweare.urls'))
 ]
