@@ -29,6 +29,8 @@ urlpatterns = [
     path('wedo/', include('whatwedo.urls')),
     path('about/', include('whoweare.urls')),
     path('contact/', include('contact.urls')),
+    path('subscribe/', include('subscribe.urls')),
+    path('donate/', include('donate.urls')),
 ]
 
 if settings.DEBUG:

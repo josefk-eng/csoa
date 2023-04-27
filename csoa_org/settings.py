@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'resorce',
     'training',
     'whatwedo',
-    'contact'
+    'contact',
+    'donate',
+    'subscribe'
 ]
 
 MIDDLEWARE = [
