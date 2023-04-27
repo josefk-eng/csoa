@@ -6,7 +6,7 @@ from csoa import models
 def overview(request):
     text = models.MovingText.objects.all()
     word = models.MovingWord.objects.all()
-    return render(request, 're_overview.html', {"moving": text, "movingword": word})
+    return render(request, 'res_overview.html', {"moving": text, "movingword": word})
 
 
 def training(request):
