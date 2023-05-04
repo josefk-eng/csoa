@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from csoa.models import MovingText, MovingWord
+from csoa.models import MovingText, MovingWord, Partners
 
 
 # Create your views here.
@@ -27,8 +27,9 @@ def history(request):
 def partners(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
-    return render(request, 'partners', context)
+    part = Partners.objects.all()
+    context = {"moving": text, "movingword": word, "partners":part}
+    return render(request, 'partners.html', context)
 
 
 def modeofoperation(request):

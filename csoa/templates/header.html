@@ -116,6 +116,17 @@
   }
 }
 
+#navigation a{
+    display:flex;
+    align-items: center;
+}
+
+#navigation a i{
+    font-size:8px;
+    padding-left:5px;
+    margin-top:5px;
+}
+
 </style>
 
 <header>
@@ -170,7 +181,7 @@
                                     <nav>
                                         <ul id="navigation" >
                                             <li><a href="{% url 'index' %}">Home</a></li>
-                                            <li><a href="">Who We Are</a>
+                                            <li><a href="">Who We Are <i class="bi bi-caret-down-fill"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'statements' %}">Mission Statements</a></li>
                                                     <li><a href="{% url 'network' %}">Coordinator Network</a></li>
@@ -180,7 +191,7 @@
                                                     <li><a href="{% url 'portfolios' %}">Portfolios</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="">What we Do</a>
+                                            <li><a href="">What we Do <i class="bi bi-caret-down-fill"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'prayer' %}">Prayer</a></li>
                                                     <li><a href="{% url 'stories' %}">Partnerships</a></li>
@@ -189,7 +200,7 @@
                                                     <li><a href="{% url 'news' %}">News</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="">Trainings</a>
+                                            <li><a href="">Trainings <i class="bi bi-caret-down-fill"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'leadership' %}">Leadership</a></li>
                                                     <li><a href="{% url 'mgt_training' %}">School Management Trainings</a></li>
@@ -198,7 +209,7 @@
                                                     <li><a href="{% url 'capacity' %}">Capacity Building</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="">Projects</a>
+                                            <li><a href="">Projects <i class="bi bi-caret-down-fill"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'overview' %}">Projects Overview</a></li>
                                                     <li><a href="{% url 'examination' %}">Examination Board</a></li>
@@ -214,7 +225,7 @@
                                                     <li><a href="{% url 'boy_child_awakening' %}">Boy Child awakening </a></li>
                                                 </ul>
                                             </li>
-                                            <li><a >Resources</a>
+                                            <li><a >Resources <i class="bi bi-caret-down-fill"></i></a>
                                                 <ul class="submenu">
                                                     <li><a href="{% url 'res_overview' %}">Resources Overview</a></li>
                                                     <li><a href="{% url 'training' %}">Trainings</a></li>
