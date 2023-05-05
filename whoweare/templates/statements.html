@@ -10,21 +10,13 @@
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-8 mt-5 align-items-stretch" style="padding:8vw">
-                <div class="statement">
-                    <h4>Our Mission</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in metus sed sapien ultricies pretium a at justo. Maecenas luctus velit et auctor maximus.</p>
+                {% for state in states %}
+                    <div class="statement">
+                    <h4>{{ state.title }}</h4>
+                    <p>{{ state.description }}</p>
                     <hr>
                 </div>
-                <div class="statement">
-                    <h4>Our Vision</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in metus sed sapien ultricies pretium a at justo. Maecenas luctus velit et auctor maximus.</p>
-                    <hr>
-                </div>
-                <div class="statement">
-                    <h4>Our Core Values</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in metus sed sapien ultricies pretium a at justo. Maecenas luctus velit et auctor maximus.</p>
-                    <hr>
-                </div>
+                {% endfor %}
             </div>
             <div class="col-md-4">
                 <img src="{% static 'assets/img/mission.png'%}" class="img-fluid" style="padding:2vw">

@@ -24,34 +24,17 @@
     </div>
     <div class="divider div-transparent div-dot"></div>
          <div class="row" id="ports" style="margin-bottom:5%;margin-top:3%;">
-         <div class="col-md-4">
+             {% for port in portfolios %}
+                <div class="col-md-4">
              <div class="content"> <a href="#">
-                     <div class="content-overlay"></div> <img class="content-image" src="https://i.imgur.com/7cNRozs.jpg">
+                     <div class="content-overlay"></div> <img class="content-image" src="{{ port.image.url }}">
                      <div class="content-details fadeIn-bottom">
-                         <h3 class="content-title">Mr. Saazi Fred</h3>
-                         <p class="content-text"><i class="bi bi-postage"></i> Chairman</p>
+                         <h3 class="content-title">{{ port.name }}</h3>
+                         <p class="content-text"><i class="bi bi-postage"></i> {{ port.title }}</p>
                      </div>
                  </a> </div>
          </div>
-         <div class="col-md-4">
-             <div class="content"> <a href="#">
-                     <div class="content-overlay"></div> <img class="content-image" src="https://i.imgur.com/CS59IJZ.jpg">
-                     <div class="content-details fadeIn-bottom">
-                         <h3 class="content-title">Mr Daniel Mwesigwa</h3>
-                         <p class="content-text"><i class="bi bi-postage"></i> CEO</p>
-                     </div>
-                 </a> </div>
-         </div>
-         <div class="col-md-4">
-             <div class="content"> <a href="#">
-                     <div class="content-overlay"></div> <img class="content-image" src="https://i.imgur.com/LITAKvq.jpg">
-                     <div class="content-details fadeIn-bottom">
-                         <h3 class="content-title">Another Portfolio</h3>
-                         <p class="content-text"><i class="fa fa-map-marker"></i> Hawaii</p>
-                     </div>
-                 </a>
-             </div>
-         </div>
+             {% endfor %}
      </div>
 </div>
 

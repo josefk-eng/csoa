@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from csoa.models import MovingText, MovingWord, Partners
+from . import models
 
 
 # Create your views here.
@@ -13,14 +14,16 @@ def network(request):
 def statements(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
+    stats = models.Statement.objects.all()
+    context = {"moving": text, "movingword": word, "states": stats}
     return render(request, 'statements.html', context)
 
 
 def history(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
+    hist = models.History.objects.all()
+    context = {"moving": text, "movingword": word, "history": hist}
     return render(request, 'history.html', context)
 
 
@@ -28,7 +31,7 @@ def partners(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
     part = Partners.objects.all()
-    context = {"moving": text, "movingword": word, "partners":part}
+    context = {"moving": text, "movingword": word, "partners": part}
     return render(request, 'partners.html', context)
 
 
@@ -42,5 +45,6 @@ def modeofoperation(request):
 def portfolios(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
+    port = models.Portfolio.objects.all()
+    context = {"moving": text, "movingword": word, "portfolios":port}
     return render(request, 'portfolios.html', context)

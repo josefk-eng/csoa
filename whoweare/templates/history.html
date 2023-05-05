@@ -215,38 +215,16 @@
                     <h2 class="h1 text-secondary mb-0 text-uppercase">Christians School Owners Association</h2>
                     <p class="fs-3 font-weight-500">Christ Centered Education</p>
                 </div>
-                <div class="timeline-box one-of-two">
-                    <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/87CEFA/000000" alt="...">
+                {% for hist in history %}
+                    <div class="timeline-box one-of-two">
+                    <img class="mb-1-6 rounded" src="{{ hist.image.url }}" alt="...">
                     <div class="content">
-                        <h3 class="h4 mb-2 mb-md-3">History One</h3>
-                        <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
+                        <h3 class="h4 mb-2 mb-md-3">{{ hist.title }}</h3>
+                        <p class="mb-0">{{ hist.description }}</p>
                     </div>
-                    <div class="year">1995</div>
+                    <div class="year">{{ hist.year }}</div>
                 </div>
-                <div class="timeline-box one-of-two">
-                    <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/FF7F50/000000" alt="...">
-                    <div class="content">
-                        <h3 class="h4 mb-2 mb-md-3">Increase employee by 6 members</h3>
-                        <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
-                    </div>
-                    <div class="year">2003</div>
-                </div>
-                <div class="timeline-box one-of-two">
-                    <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/008B8B/000000" alt="...">
-                    <div class="content">
-                        <h3 class="h4 mb-2 mb-md-3">History Two</h3>
-                        <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
-                    </div>
-                    <div class="year">2020</div>
-                </div>
-                <div class="timeline-box one-of-two">
-                    <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/00CED1/000000" alt="...">
-                    <div class="content">
-                        <h3 class="h4 mb-2 mb-md-3">History Three</h3>
-                        <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum</p>
-                    </div>
-                    <div class="year">2023</div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
