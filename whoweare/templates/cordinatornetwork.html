@@ -1,6 +1,114 @@
 {% extends 'index.html' %}
+{% load my_extras %}
 {% block content %}
-    {% block soon %}
-        {% include 'coming.html' %}
-    {% endblock %}
+<style>
+    /*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team .team-member {
+  overflow: hidden;
+  background: #fff;
+}
+
+.team .team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .team-member .social {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .team-member .social a {
+  transition: color 0.3s;
+  color: #31547c;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .team-member .social a i {
+  line-height: 0;
+}
+
+.team .team-member .social a:hover {
+  color: var(--color-primary);
+}
+
+.team .team-member .social i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.team .team-member .member-info {
+  padding: 25px 15px 0 15px;
+  text-align: center;
+}
+
+.team .team-member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: var(--color-secondary);
+}
+
+.team .team-member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.team .team-member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #6c757d;
+}
+
+.team .team-member:hover .social {
+  opacity: 1;
+}
+</style>
+<section  id="team" class="team" style="margin-top:10vh;">
+    <div class="container">
+    <div class="col-xl-10 col-lg-10">
+        <h4>{{ heads|headers:"coordinator" }}</h4>
+        <p>{{ heads|sub_headers:"coordinator" }}</p>
+    </div>
+    <div class="divider div-transparent div-dot"></div>
+    <div class="row" style="margin-top:10vh;">
+        {% for port in portfolio|coordinators:"coordinator" %}
+        <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100" style="margin-bottom:7vh;">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="{{ port.image.url }}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{ port.name }}</h4>
+                <span>{{ port.title }}</span>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+        {% endfor %}
+    </div>
+</div>
+</section>
 {% endblock %}

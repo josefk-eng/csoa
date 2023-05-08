@@ -57,6 +57,7 @@ class Portfolio(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     title = models.CharField(max_length=100)
+    group = models.CharField(max_length=100, null=True, blank=True)
 
     class Meta:
         verbose_name = _("Portfolio")
@@ -67,3 +68,16 @@ class Portfolio(models.Model):
 
     def get_absolute_url(self):
         return reverse("Portfolio_detail", kwargs={"pk": self.pk})
+
+    def save(self, *args, **kwargs):
+        if "region" in self.title:
+            self.group = "coordinator-region"
+        elif "District" in self.title:
+            self.group = "coordinator-district"
+        elif "county" in self.title:
+            self.group = "coordinator-sub-county"
+        elif "Parish" in self.title:
+            self.group = "coordinator-parish"
+        elif "school" in self.title:
+            self.group = "coordinator-school"
+        super().save(*args, **kwargs)

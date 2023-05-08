@@ -1,6 +1,110 @@
 {% extends 'index.html' %}
+{% load my_extras %}
 {% block content %}
-    {% block soon %}
-        {% include 'coming.html' %}
-    {% endblock %}
+
+<style>
+    /*--------------------------------------------------------------
+# Recent Blog Posts Section
+--------------------------------------------------------------*/
+.news .post-box {
+  transition: 0.3s;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.news .post-box .post-img {
+  overflow: hidden;
+  position: relative;
+}
+
+.news .post-box .post-img img {
+  transition: 0.5s;
+}
+
+.news .post-box .meta {
+  margin-top: 15px;
+}
+
+.news .post-box .meta .post-date {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-primary);
+}
+
+.news .post-box .meta .post-author {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-secondary);
+}
+
+.news .post-box .post-title {
+  font-size: 18px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin: 15px 0 0 0;
+  position: relative;
+  transition: 0.3s;
+}
+
+.news .post-box p {
+  margin: 15px 0 0 0;
+  color: rgba(27, 47, 69, 0.7);
+}
+
+.news .post-box .readmore {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  line-height: 1;
+  transition: 0.3s;
+  margin-top: 15px;
+}
+
+.news .post-box .readmore i {
+  line-height: 0;
+  margin-left: 4px;
+  font-size: 18px;
+}
+
+.news .post-box:hover .post-title {
+  color: var(--color-primary);
+}
+
+.news .post-box:hover .post-img img {
+  transform: scale(1.1);
+}
+</style>
+
+
+<section class="news" style="margin-top:10vh;">
+    <div class="container">
+        <div class="col-xl-10 col-lg-10">
+            <h4>{{ heads|headers:"news" }}</h4>
+            <p>{{ heads|sub_headers:"news" }}</p>
+        </div>
+    <div class="divider div-transparent div-dot"></div>
+
+        <div class="row" style="margin-top:10vh;">
+
+            {% for new in news %}
+            <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="post-box">
+              <div class="post-img"><img src="{{ new.image.url }}" class="img-fluid" alt=""></div>
+              <div class="meta">
+                <span class="post-date">{{ new.date }}</span>
+                <span class="post-author"> / {{ new.author }}</span>
+              </div>
+              <h3 class="post-title">{{ new.title }}</h3>
+              <p>{{ new.description }}</p>
+              <a href="blog-details.html" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
 {% endblock %}

@@ -1,9 +1,10 @@
 {% extends 'index.html' %}
+{% load my_extras %}
 {% block content %}
 <div class="container clients" style="margin-top:7%;">
     <div class="col-xl-10 col-lg-10">
-        <h4>Our Mode Of Operation</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in metus sed sapien ultricies pretium a at justo. Maecenas luctus velit et auctor maximus.</p>
+        <h4>{{ heads|headers:"mode" }}</h4>
+        <p>{{ heads|sub_headers:"mode" }}</p>
     </div>
 
     <div class="row">

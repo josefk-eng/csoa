@@ -29,6 +29,14 @@
       }, 800);
       return false;
     });
+
+
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
   
 
 /* 3. slick Nav */

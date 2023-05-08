@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from csoa.models import MovingText, MovingWord, Partners
+from csoa.models import MovingText, MovingWord, Partners, Header
 from . import models
 
 
@@ -7,7 +7,9 @@ from . import models
 def network(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
+    head = Header.objects.all()
+    port = models.Portfolio.objects.all()
+    context = {"moving": text, "movingword": word, "heads": head, "portfolio":port}
     return render(request, 'cordinatornetwork.html', context)
 
 
@@ -15,7 +17,8 @@ def statements(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
     stats = models.Statement.objects.all()
-    context = {"moving": text, "movingword": word, "states": stats}
+    head = Header.objects.all()
+    context = {"moving": text, "movingword": word, "states": stats, "heads": head}
     return render(request, 'statements.html', context)
 
 
@@ -23,7 +26,8 @@ def history(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
     hist = models.History.objects.all()
-    context = {"moving": text, "movingword": word, "history": hist}
+    head = Header.objects.all()
+    context = {"moving": text, "movingword": word, "history": hist, "heads": head}
     return render(request, 'history.html', context)
 
 
@@ -31,14 +35,16 @@ def partners(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
     part = Partners.objects.all()
-    context = {"moving": text, "movingword": word, "partners": part}
+    head = Header.objects.all()
+    context = {"moving": text, "movingword": word, "partners": part, "heads": head}
     return render(request, 'partners.html', context)
 
 
 def modeofoperation(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
-    context = {"moving": text, "movingword": word}
+    head = Header.objects.all()
+    context = {"moving": text, "movingword": word, "heads": head}
     return render(request, 'modeofoperations.html', context)
 
 
@@ -46,5 +52,6 @@ def portfolios(request):
     text = MovingText.objects.all()
     word = MovingWord.objects.all()
     port = models.Portfolio.objects.all()
-    context = {"moving": text, "movingword": word, "portfolios":port}
+    head = Header.objects.all()
+    context = {"moving": text, "movingword": word, "portfolios": port, "heads": head}
     return render(request, 'portfolios.html', context)

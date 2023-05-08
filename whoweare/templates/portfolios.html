@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load my_extras %}
 {% block content %}
 <style>
     @import url(https://fonts.googleapis.com/css?family=Raleway);
@@ -19,8 +20,8 @@
 
 <div class="container clients" style="margin-top:7%;">
     <div class="col-xl-10 col-lg-10">
-        <h4>Portfolios</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in metus sed sapien ultricies pretium a at justo. Maecenas luctus velit et auctor maximus.</p>
+        <h4>{{ heads|headers:"portfolio" }}</h4>
+        <p>{{ heads|sub_headers:"portfolio" }}</p>
     </div>
     <div class="divider div-transparent div-dot"></div>
          <div class="row" id="ports" style="margin-bottom:5%;margin-top:3%;">

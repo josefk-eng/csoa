@@ -1,6 +1,25 @@
 {% extends 'index.html' %}
+{% load my_extras %}
 {% block content %}
-    {% block soon %}
-        {% include 'coming.html' %}
-    {% endblock %}
+
+<section style="margin-top:10vh;">
+    <div class="container">
+        <div class="row" style="justify-content:center;">
+            <div class="col-xl-8 col-lg-8 col-md-8" >
+                <div class="home-blog-single mb-30">
+                    <div class="blog-cap">
+                        <h4><a href="">{{ stories|mainStory }}</a></h4>
+                        <p>{{ stories|mainDescription  }}</p>
+                    </div>
+                    <div class="blog-img-cap">
+                        <div class="blog-img align-items-stretch position-relative video-box" style="background-image: url('{{ stories|image  }}');" data-aos="fade-right">
+                            <a href="{{ stories|mainLink  }}" class="glightbox play-btn mb-4"></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
