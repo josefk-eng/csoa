@@ -8,13 +8,6 @@ def overview(request):
     word = models.MovingWord.objects.all()
     return render(request, 'res_overview.html', {"moving": text, "movingword": word})
 
-
-def training(request):
-    text = models.MovingText.objects.all()
-    word = models.MovingWord.objects.all()
-    return render(request, 'trainings.html', {"moving": text, "movingword": word})
-
-
 def familyLinks(request):
     text = models.MovingText.objects.all()
     word = models.MovingWord.objects.all()

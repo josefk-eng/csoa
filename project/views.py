@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from csoa import models
+from .models import ProjectOverView
 
 
 # Create your views here.
 def overview(request):
     text = models.MovingText.objects.all()
     word = models.MovingWord.objects.all()
-    return render(request, 'projects_overview.html', {"moving": text, "movingword": word})
+    project = ProjectOverView.objects.filter(isActive=True)
+    return render(request, 'projects_overview.html', {"moving": text, "movingword": word, "project": project.first()})
 
 
 def examination(request):
@@ -53,18 +55,6 @@ def menstrual(request):
     text = models.MovingText.objects.all()
     word = models.MovingWord.objects.all()
     return render(request, 'menstrual_health.html')
-
-
-def prayerNet(request):
-    text = models.MovingText.objects.all()
-    word = models.MovingWord.objects.all()
-    return render(request, 'prayer_networks.html')
-
-
-def regionalMDD(request):
-    text = models.MovingText.objects.all()
-    word = models.MovingWord.objects.all()
-    return render(request, 'regional_MDD.html')
 
 
 def regionalSportsGalour(request):

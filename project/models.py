@@ -39,3 +39,22 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse("Project_detail", kwargs={"pk": self.pk})
+
+
+class ProjectOverView(models.Model):
+    video = models.CharField(max_length=500)
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    btn_text = models.CharField(max_length=50)
+    isActive = models.BooleanField(default=False)
+    image = models.ImageField(upload_to="img/overview", default="img/placeholder.jpeg")
+
+    class Meta:
+        verbose_name = _("ProjectOverView")
+        verbose_name_plural = _("ProjectOverView")
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse("ProjectOverView_detail", kwargs={"pk": self.pk})

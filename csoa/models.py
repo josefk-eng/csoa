@@ -161,7 +161,8 @@ class School(models.Model):
     name = models.CharField(max_length=100)
     address = models.CharField(max_length=1000)
     director = models.ForeignKey(Member, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to="img/schools", default="img/placeholder1.png")
+    image = models.ImageField(upload_to="img/schools", default="img/placeholder.jpeg")
+    description = models.TextField(default="")
 
     class Meta:
         verbose_name = _("School")

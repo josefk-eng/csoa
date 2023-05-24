@@ -11,7 +11,5 @@ urlpatterns = [
     path('discipleship', views.discipleship, name='discipleship'),
     path('girl_child_emp', views.girlChild, name='girl_child_emp'),
     path('menstrual', views.menstrual, name='menstrual'),
-    path('prayer_networks', views.prayerNet, name='prayer_networks'),
-    path('regionalMDD', views.regionalMDD, name='regionalMDD'),
     path('regionalSportsGalour', views.regionalSportsGalour, name='regionalSportsGalour'),
 ]

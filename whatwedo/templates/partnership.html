@@ -1,6 +1,158 @@
 {% extends 'index.html' %}
+{% load static %}
 {% block content %}
-    {% block soon %}
-        {% include 'coming.html' %}
-    {% endblock %}
+<style>
+
+.reson_area .single_reson {
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .reson_area .single_reson {
+    margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .reson_area .single_reson {
+    margin-bottom: 40px;
+  }
+}
+
+.reson_area .single_reson .thum {
+  margin-right: 84px;
+  padding-bottom: 84px;
+}
+
+.reson_area .single_reson .thum .thum_1 {
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.reson_area .single_reson .thum .thum_1 img {
+  width: 100%;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  border-radius: 9px;
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+
+.reson_area .single_reson .help_content {
+  background: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 47px 40px 33px 40px;
+  left: 46px;
+}
+
+.reson_area .single_reson .help_content h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.reson_area .single_reson .help_content p {
+  margin-top: 21px;
+  margin-bottom: 30px;
+}
+
+.reson_area .single_reson .help_content .read_more {
+  font-size: 16px;
+  color: #BCBDBF;
+  text-transform: capitalize;
+  position: relative;
+  display: inline-block;
+  padding-left: 68px;
+}
+
+
+.reson_area .single_reson .help_content .read_more::before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 36px;
+  height: 2px;
+  background: #707070;
+  content: '';
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+
+.reson_area .single_reson .help_content .read_more:hover {
+  color: #3CC78F;
+}
+
+
+.reson_area .single_reson .help_content .read_more:hover::before {
+  background: #3CC78F;
+}
+
+
+.reson_area .single_reson:hover .thum img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+.section_padding {
+  padding-top: 5vh;
+  padding-bottom: 120px;
+}
+
+</style>
+
+    <div class="reson_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="section-tittle text-center" style="margin-top:10vh;">
+                        <h2>Our Partner Schools</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center section_padding">
+                {% for school in schools %}
+                    <div class="col-lg-4 col-md-6">
+                    <div class="single_reson">
+                        <div class="thum">
+                            <div class="thum_1">
+                                <img src="{{ school.image.url }}" alt="">
+                            </div>
+                        </div>
+                        <div class="help_content">
+                            <h4>{{ school.name }}</h4>
+                            <p>{{ school.description }}</p>
+                            <a href="#" class="read_more">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 {% endblock %}
